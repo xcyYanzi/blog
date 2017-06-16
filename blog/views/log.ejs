@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+ 	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css"/>
+ 	
+  </head>
+  <body>
+  	 <%- include('header.ejs') %>
+  	<div class="container">
+  		
+  		 <div class="row">
+	  <div class="col-xs-12 col-md-12">
+	  	<div class="jumbotron">
+			  <h1>Hello, world!</h1>
+			  <p>用心看世界</p>
+			</div>
+	  </div>
+	 </div>
+  		
+  		<div class="row">
+ 			 <div class="col-md-4">
+ 			 	<h4 class="text-left">最近动态</h4>
+ 			 	
+ 			 	<div class="panel panel-info">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">日志</h3>
+				  </div>
+				  <div class="panel-body">
+				  	<h3><a href='/addArt'>写日志</a></h3>
+				    </ul>    
+				  </div>
+				</div>
+ 			 	
+ 			 	<div class="panel panel-danger">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">最近文章</h3>
+				  </div>
+				  <div class="panel-body">
+				  	
+				  	<ul>
+				    <% con1.forEach(function(item1){ %>
+				    <li>	<%-item1.title %></li>
+				    	
+				   <% }) %>
+				    </ul>    
+				  </div>
+				</div>
+		
+ 			 </div>
+ 			 
+ 			 <div class="col-md-8">
+ 			 		<h4 class="text-left">最近文章</h4>
+  				<% for(var i=0;i<con1.length;i++){ %>
+				    <div class="thumbnail">
+				      <div class="caption">  
+				        	<h3><%- con1[i].title %></h3>
+				        	<p><%- con1[i].con %></p>
+				        <p><a href="#" class="btn btn-primary" role="button">阅读原文</a></p>
+				      </div>
+				    </div>
+				    
+				   <% } %>
+	  	
+ 			 </div>
+			</div>
+  	</div>
+  </body>
+</html>
